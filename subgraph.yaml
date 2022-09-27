@@ -4,7 +4,7 @@ schema:
 dataSources:
   - kind: ethereum
     name: GPv2Settlement
-    network: mainnet
+    network: xdai 
     source:
       address: "0x9008D19f58AAbD9eD0D60971565AA8510560ab41"
       abi: GPv2Settlement
@@ -34,6 +34,6 @@ dataSources:
         - event: Trade(indexed address,address,address,uint256,uint256,uint256,bytes)
           handler: handleTrade
       callHandlers: 
-        - function: settle(address[],uint256[],(uint256,uint256,address,uint256,uint256,uint32,bytes32,uint256,uint256,uint256,bytes)[],tuple[][3])
+        - function: settle(address[],uint256[],(uint256,uint256,address,uint256,uint256,uint32,bytes32,uint256,uint256,uint256,bytes)[],(address,uint256,bytes)[][3])
           handler: handleSettle
       file: ./src/g-pv-2-settlement.ts
